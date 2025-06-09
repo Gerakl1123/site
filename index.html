@@ -1,78 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Student Manager</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #eee;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  header {
-    background-color: #1f1f1f;
-    padding: 20px;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #90caf9;
-  }
-  main {
-    flex-grow: 1;
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  h2 {
-    color: #bb86fc;
-  }
-  p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-  footer {
-    background-color: #1f1f1f;
-    color: #666;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-  a {
-    color: #90caf9;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Управление Студентами</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+    .lang-switcher {
+      margin-top: 1rem;
+    }
+    button {
+      background: #00ffcc;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: #0d0d0d;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    pre {
+      background: #111;
+      padding: 1rem;
+      border-left: 5px solid #00ffcc;
+    }
+  </style>
 </head>
 <body>
-<header>Student Manager</header>
-<main>
-  <h2>Welcome to Student Manager</h2>
-  <p>
-    This simple web app helps you manage students and their grades easily.
-  </p>
-  <h3>Features:</h3>
-  <ul>
-    <li>Keep track of students' names and grades</li>
-    <li>Supports multiple lessons and subjects</li>
-    <li>Easy to use and extend</li>
+  <h1 id="title">Система учета студентов</h1>
+  <p id="desc">Самая дерзкая система для учета оценок, предметов и студентов всех времен.</p>
+
+  <div class="lang-switcher">
+    <button onclick="switchLang('ru')">Русский</button>
+    <button onclick="switchLang('en')">English</button>
+  </div>
+
+  <h2 id="features">Фичи:</h2>
+  <ul id="feature-list">
+    <li>Поиск по имени и оценке</li>
+    <li>Чтение из файлов</li>
+    <li>Сохранение в журнал</li>
+    <li>Смена языка</li>
   </ul>
-  <h3>How to use:</h3>
-  <p>Currently this is a demo site. You can improve and expand it with your code.</p>
-  <h3>GitHub:</h3>
-  <p>
-    Check out the source code on
-    <a href="https://github.com/Gerakl1123/Student_Manager" target="_blank" rel="noopener noreferrer">GitHub</a>.
-  </p>
-</main>
-<footer>© 2025 Student Manager. Made by Gerakl1123.</footer>
+
+  <h2>Пример кода</h2>
+  <pre>
+std::find_if(students.begin(), students.end(), [&](const std::string& s) {
+    return s == nameStudent;
+});
+  </pre>
+
+  <script>
+    const translations = {
+      ru: {
+        title: "Система учета студентов",
+        desc: "Самая дерзкая система для учета оценок, предметов и студентов всех времен.",
+        features: "Фичи:",
+        featureList: [
+          "Поиск по имени и оценке",
+          "Чтение из файлов",
+          "Сохранение в журнал",
+          "Смена языка"
+        ]
+      },
+      en: {
+        title: "Student Management System",
+        desc: "The most insane system for tracking grades, subjects, and students ever made.",
+        features: "Features:",
+        featureList: [
+          "Find by name and grade",
+          "Read from files",
+          "Save to journal",
+          "Language switching"
+        ]
+      }
+    };
+
+    function switchLang(lang) {
+      const t = translations[lang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("desc").textContent = t.desc;
+      document.getElementById("features").textContent = t.features;
+      const ul = document.getElementById("feature-list");
+      ul.innerHTML = "";
+      t.featureList.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        ul.appendChild(li);
+      });
+    }
+  </script>
 </body>
 </html>
