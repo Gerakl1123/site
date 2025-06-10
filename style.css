@@ -1,102 +1,92 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #f5f7fa;
-  color: #333;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
 }
+
 header {
-  background-color: #1e2a38;
-  color: white;
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 40px;
+  background-color: #252526;
+  border-bottom: 1px solid #333;
 }
+
 .logo {
+  font-size: 24px;
   font-weight: bold;
-  font-size: 1.5rem;
+  color: #61dafb;
 }
-nav ul {
-  display: flex;
-  gap: 1rem;
-}
+
 nav a {
-  color: white;
+  margin-left: 20px;
+  color: #d4d4d4;
   text-decoration: none;
-  transition: color 0.3s;
 }
+
 nav a:hover {
   color: #61dafb;
 }
+
+.hero {
+  text-align: center;
+  padding: 100px 20px 50px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #61dafb;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
 section {
-  padding: 4rem 2rem;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
-#home {
-  background: linear-gradient(to right, #1e2a38, #35485f);
-  color: white;
-  text-align: center;
+
+section h2 {
+  color: #61dafb;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
-#home .btn {
+
+.btn {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  background: #61dafb;
-  color: #000;
-  text-decoration: none;
-  border-radius: 5px;
-}
-.cards {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.card {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  flex: 1;
-  min-width: 250px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.team {
-  display: flex;
-  gap: 2rem;
-}
-.member {
-  text-align: center;
-}
-.member img {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-}
-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-form input, form textarea {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-form button {
-  padding: 0.8rem;
-  background: #1e2a38;
+  background-color: #007acc;
   color: white;
-  border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
+
+.btn:hover {
+  background-color: #005a9e;
+}
+
+.download {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+ul li, ol li {
+  margin-bottom: 10px;
+}
+
 footer {
   text-align: center;
-  padding: 1rem;
-  background-color: #1e2a38;
-  color: white;
+  padding: 30px;
+  background-color: #252526;
+  border-top: 1px solid #333;
+  color: #888;
 }
